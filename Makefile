@@ -4,21 +4,20 @@
 PLATFORM_OS := $(shell uname | cut -d_ -f1)
 
 ####### Makefile Conventions - Directory variables
-
+#clean :
+	#find . -type f | xargs touch
+	#rm -rf $(OBJS)
 srcdir = .
 prefix = /usr/local
-
 exec_prefix = $(prefix)
 sysconfdir = $(prefix)/etc
 includedir = $(prefix)/include
 datarootdir = $(prefix)/share
 localstatedir = $(prefix)/var
-
 bindir = $(exec_prefix)/bin
 libdir = $(exec_prefix)/lib
 libexecdir = $(exec_prefix)/libexec
-sbindir = $(exec_prefix)/sbin
-
+sbindir = $(exec_prefix)/sbin:
 datadir = $(datarootdir)
 docdir = $(datarootdir)/doc/pev
 infodir = $(datarootdir)/info
